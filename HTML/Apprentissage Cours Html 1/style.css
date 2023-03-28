@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.hero {
+    background-color: #1B7ED2;
+    text-align: center;
+}
+
+.logo-principal {
+    width: 10% ;
+    padding-bottom: 20px;
+}
+
+.slogan {
+    text-align: center;
+}
+.slogan p{
+    font-size: 2em;
+}
+.slogan a{
+    background-color: green;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.contenu {
+    background-image: url('fond.jpg');
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.contenu div {
+    background-color: #1B7ED2;
+    width: 80%;
+    text-align: center;
+    border-radius: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 3px solid #ffffff;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.newsletter {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+nav li {
+    display: inline ;
+}
+nav a{
+    text-decoration: none;
+    font-size: 1.5em;
+    font-variant: small-caps;
+    color: gray;
+    margin-right: 15px;
+}
+nav a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+    .logo-principal {
+        width: 30%;
+    }
+    .contenu {
+        display: flex;
+    }
+    .contenu div {
+        width: 35%;
+    }
+}

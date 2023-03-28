@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+/* Pour changer la police d'un texte, tu peux lui importer une font que tu aura choisi depuis internet. il te faudra utiliser la commande ci-dessus pour l'importer dans ton document.
+Ou alors, tu peux la télécharger et de la mettre dans le dossier du projet. Pour l'utiliser tu devras utiliser la commande ci-dessous.
+Attention, c&es commandes doivent toujours être mises le plus haut dans le document. */
+
+@font-face {
+    font-family: 'DMSerif';
+    src: url(./assets/fonts/DMSerifDisplay-Regular.ttf);
+}
+
+/* L'étoile donne du style à Tous les éléments pour cela utilise la commande ci dessous.*/
+/* *{
+    margin: 0;
+    padding: 0;
+    border: 2px solid red; 
+} */
+
+body {
+    font-family: "DMSerif", Verdana;
+    /* Pour changer le caractère d'écriture tu as 2 solutions:
+
+    Solution n°1: 
+        Tu importe la police d'écriture avec --> @import <-- suivi de url du site que tu mets en haut de page.
+        Tu pourras maintenant changer la police d'écriture dans ta balise avec l'intègre avec la commande font-family: 'le nom de la police d'écriture';
+
+    Solution n°2: 
+        Tu télécharge la police d'écriture depuis le site de front.
+        Extraire le fichier en .ttf et le mettre dans le dossier du projet.
+        Ne pas exister à rajouter de nouveau dossier à l'intérieur de celui-ci, Cela permet de trier et d'améliorer la clarté du projet.
+        Pour l'intègrer il faut mettre la commande suivante en haut de page :
+            @font-face {
+                font-family: ;
+                crc: url();
+            }
+        Tu pourras maintenant changer la police d'écriture dans ta balise en l'intègrant avec la commande font-family: 'le nom de la police d'écriture';*/
+
+    background: url(./assets/img/bg.jpg) center/cover;
+    /*min-height: 100vh;*/
+    /* VH = Viewport Height soit 100% de la taille de l'écran de l'utilisateur en hauteaur */
+    /* VW = Viewport width soit 100% de la taille de l'écran de l'utilisateur en largeur*/
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;    
+    font-size: 2.5rem;
+    /* Les tailles de polices doivent être en REM, 1rem = 16px */
+    /* Un H1 de base est égal à 2rem */
+    
+    text-shadow: 3px 3px 8px #00000042;
+    /* Une ombre doit avoir 3 valeur et une couleur, expemple 0 0 0 black.*/
+
+    color: #ab0ef4;
+    /* Une couleur peut être appliqué soit en mettant la couleur choisi directement (exemple-> color: red;).*/
+    /* Soit en mettant une couleur avec # puis suivi de 6 lettre et chiffre (exemple-> color: #ab0ef4;), Le noir lui à pour code #000000 et le blanc lui a pour code #ffffff. */
+    /* soit en mettant une couleur en RGB + 3 valeur mis entre parrenthèse (exempl-> color: (140,10,29);).   */
+
+    font-family: 'Oswald', sans-serif;    
+}
+
+main {
+    min-height: 500px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.582);
+
+    /* Pour centrer une boite */
+    /* Tu tape margin: + première valeur = haut et bas et la deuxième valeur = gauche droite (voir exemple ci dessous)*/
+    margin: 0 auto;
+    border: 2px solid rgba(45, 45, 204, 0.589);
+    
+    /* Pour arrondir les angles. */
+    border-radius: 20px 20px 0 0;    
+    /* Ou alors, tu peux aussi faire --> border-radius: 20px 20px 0 0; La modification des angles ce fait dans cet ordre --> haut gauche, haut droit, bas droit, bas gauche; */
+
+    box-shadow: 0px 0px 15px 10px #81cfc6;
+    /* Cette commande fonctionne comme texte-shadow. */
+
+    padding: 15px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.flexbox,
+.grid,
+.absolute {
+    border: 2px solid skyblue;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    min-height: 150px;
+}
+
+/* FLEXBOX */
+/* sert à répartir équitablement des éléments sur la page */
+
+.flexbox ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;   
+}
+.flexbox li {
+    list-style: none;
+    height: 160px;
+    width: 160px;
+    margin: 10px;
+    background: turquoise;
+
+    /* Pour centrer un unique élément verticalement et horizontalement. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* GRID */
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.grid img {
+    height: 50%;
+    margin: 20px auto;
+    display: block;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "i1 i2"
+    "ta ta"
+    "vi bt";
+    
+}
+
+input,
+textarea {
+    margin: 5px;
+    border: 1px solid darkblue;
+    padding: 10px;
+    font-style: 1.1rem;
+    font-family: "DMSerif";
+    border-radius: 5px;
+}
+textarea {
+    grid-area: ta;
+    height: 40px;
+    resize: none;
+}
+
+#btn-submit{
+    grid-area: bt;
+    cursor: pointer;
+    background: cyan;
+    transition: 0.2s;
+}
+#btn-submit:hover {
+    background: darkblue;
+    color: white;
+}
+
+/* ABSOLUTE */
+/* Sans élément en relative, de bas, l'élément en absolute l'est par rapport au body. */
+/* Il faut mettre une position relative au parent pour contrainde l'élément en absolute dans ses frontière. */
+
+.absolute {
+    position: relative;
+}
+#circle1 {
+    height: 80px;
+    width: 80px;
+    background: skyblue;
+    position: absolute;
+    border-radius: 150px;
+    top: -20px;
+    right: -20px;
+}
+
+#circle2 {
+    height: 40px;
+    width: 40px;
+    border-radius: 150px;
+    background: teal;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 900px) {
+    .grid-container {
+        display: block;
+    }
+    .grid-container img {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .flexbox ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "i1"
+        "12"
+        "ta"
+        "bt";
+    }
+    input,
+    textarea {
+        font-size: 0.8rem;
+    }
+}
+
